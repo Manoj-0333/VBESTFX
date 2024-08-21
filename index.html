@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBEST</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" type="image/png" href="images/logo_1.png">
+    
+</head>
+<body>
+    <!-- PRE LOADER -->
+    <div id="preloader" class="preload-desk">
+        <video autoplay muted playsinline>
+            <source src="images/open_desk.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="preloader" class="preload-mob">
+        <video autoplay muted playsinline>
+            <source src="images/open_mob.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <!-- NAV BAR -->
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="width: 25px;"><path fill="#000000" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></li>
+            <li><a href="#home">HOME</a></li>   
+            <li><a href="#service">SERVICE</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#contact">CONTACT </a></li>
+        </ul>
+        <ul>
+            <li class="hideOnMobile"><a href="#home">HOME</a></li>   
+            <li class="hideOnMobile"><a href="#service">SERVICE</a></li>
+            <li class="hideOnMobile"><a href="#about">ABOUT US</a></li>
+            <li class="hideOnMobile"><a href="#contact">CONTACT </a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 25px;height:25px"><path fill="#000000" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg></a></li>
+        </ul>
+    </nav>
+    
+    <script>
+        
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display='flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display='none'
+        }
+        // JavaScript to remove the preloader once the page is fully loaded
+        window.addEventListener('load', () => {
+            // Set a minimum time the preloader should be displayed (e.g., 2 seconds)
+            const minPreloadTime = 2800; // in milliseconds
+            const startTime = performance.now();
+            // Function to hide the preloader after the minimum time has passed
+            const hidePreloader = () => {
+                const currentTime = performance.now();
+                const elapsedTime = currentTime - startTime;
+                if (elapsedTime >= minPreloadTime) {
+                    document.body.classList.add('loaded');
+                } else {
+                    setTimeout(hidePreloader, minPreloadTime - elapsedTime);
+                }
+            };
+            hidePreloader();
+        });
+
+
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) {
+                return false; 
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false; 
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false; 
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false; 
+            }
+        }   
+    </script>
+    <div id="home">
+        <video autoplay loop  muted plays-inline class="bg-video">
+            <source src="images/burj.mp4" type="video/mp4">
+        </video>
+        
+        <div class="logo">
+            <img src="images/logo_M.png" alt="logo" class="logo">
+        </div>
+        <div class="title">
+            <h1 class="t">FOREX</h1>
+            <p class="st">TRADING AND TRAINING</p>
+        </div>
+        <div class="coin-container">
+            <div class="intro">
+                <img src="images/coins/usd.png" alt="usd" class="usd coin">
+                <img src="images/coins/gbp.png" alt="gbp" class="gbp coin">
+                <img src="images/coins/jpy.png" alt="jpy" class="jpy coin">
+                <img src="images/coins/aud.png" alt="aud" class="aud coin">
+                <img src="images/coins/eud.png" alt="eud" class="eud coin">
+            </div>
+            <div class="quote">
+                <b>VBEST</b> is your partner in forex trading success, offering expert training and practical insights for mastering the currency markets.
+            </div>    
+        </div>
+    </div>
+    <span>
+    <div id="service">
+        <div class="card-container">
+            <div class="card">
+                <img src="images/service-img/forex.png">
+                <div class="card-content">
+                    <h1>FOREX TRADING</h1>
+                    <p>
+                        Forex trading involves buying and selling currencies in a global marketplace to profit from exchange rate fluctuations. <br>Traders analyze economic indicators, market trends, and geopolitical events to make informed decisions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="images/service-img/why.png">
+                <div class="card-content">
+                    <h1>WHY FOREX?</h1>
+                    <p>
+                        Global market access, high liquidity, 24/5 trading, potential for profit, hedging opportunities, and diverse strategies.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="images/service-img/growth.png">
+                <div class="card-content">
+                    <h1>FINANCIAL GROWTH</h1>
+                    <p>
+                        Learning forex trading can lead to financial growth by equipping individuals with the skills to profit from currency market fluctuations. <br>With disciplined strategies and risk management, traders can achieve substantial returns on their investments.                 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="images/service-img/support.png">
+                <div class="card-content">
+                    <h1>SUPPORT</h1>
+                    <p>
+                        Our forex training center offers dedicated customer support to assist with all your learning needs. <br>From technical issues to course guidance, our team is here to ensure a smooth and enriching educational experience.
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </div>    
+    </span>
+
+    <!------------------------ABOUT-------------------------------->
+    <div id="about">
+        <img src="images/about.png" alt="About VBEST" class="about-image">
+        <div class="about-details">
+            <p>
+                Since 2009, <b>VBEST</b> has been committed to teaching forex trading to young individuals, equipping them with the skills to earn confidently. Our mission is to provide expert training and support, helping our students achieve financial independence. Join <b>VBEST</b> and start your journey towards trading success.
+            </p>
+        </div>
+    </div>
+
+   <MAIN >
+    <!------------------------Flex box-------------------------------->
+    <div class="flex-container">
+        <div class="flex-item-left">
+            <div class="join">
+                <img src="images/join-us.png" alt="icon" class="join-image">
+                <p class="txt1" >JOIN, LEARN AND EARN</p>
+                <a href="register/index.html" target="_blank"><button class="join-button"><p>Grab your Seat</p></button></a><br><br>
+            </div>
+        </div>
+        <div class="flex-item-right">
+            <div class="contact">
+                <img src="images/contact.png" alt="icon" class="contact-image">
+                <p class="txt2">FEEL FREE TO CONTACT</p>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlKGNbdxLXMNhJTbgwSTqDFpkkHpGVcxWflLQLgzLLfrSXmFVWZJQFPDqTWHZRWjXtJzdV" target="_blank"><button class="contact-button"><p>vbest.velur@gmail.com</p></button></a><br><br>
+            </div>
+        </div>
+    </div>
+    <!------------------------Flex box-------------------------------->
+    <br>
+
+    <!------------ NOTICE ------------>
+    <div class="container">
+        <section class="instructions">
+            <h2>Who Can Register?</h2>
+            <ul>
+                <li>Above 18 years</li>
+                <li>Interested in trading</li>
+                <li>People who confused and have lost in trading</li>
+            </ul>
+        </section>
+
+        <section class="attention">
+            <h2>Attention!</h2>
+            <ul>
+                <li>Registered individuals must bring their own laptop</li>
+                <li>No virtual or recorded sessions</li>
+            </ul>
+        </section>
+    </div>
+
+
+
+    <center>
+    <!-- <div id="notice">
+        <div class="card-1">
+            <div class="front-face-1">
+                <img src="images/notice/who.jpg">
+            </div>
+            <div class="back-face-1">
+                <span>
+                    <img src="images/notice/who-back.jpg">
+                </span>
+            </div>
+        </div>
+        <!-- Card 2
+        <div class="card-2">
+            <div class="front-face-2">
+                <img src="images/notice/attention.jpg">
+            </div>
+            <div class="back-face-2">
+                <span>
+                    <img src="images/notice/attention-back.jpg" >    
+                </span>
+            </div>
+        </div>
+    </div>  -->
+    </center>
+    <div id="contact">
+        <a href="https://www.google.com/maps?q=11.1076919,78.0053276" target="_blank"><img src="images/location.jpg" alt="location" class="location"></a>
+        <div class="contact-details">
+            <div><i class="fa-solid fa-location-dot"></i>VBEST, THIRUVALLUVAR SALAI, P. VELUR</div>
+            <div><i class="fa-solid fa-at"></i>vbest.velur@gmail.com</div>
+            <div><i class="fa-solid fa-phone"></i>+91 94891 82727</div>
+        </div>
+    </div>
+
+    
+    <div class="cta-whatsapp">
+        <a href="https://wa.me/919489182727" target="_blank">
+            <img src="images/whatsapp-icon.png" alt="icon" width="50">    
+        </a>
+    </div>
+    
+    </MAIN>
+    
+    
+    <footer>
+        <div id="media">    
+            <a href="https://www.facebook.com/people/VBEST/61558224063382/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="fa-facebook"><path fill="white" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+            </a>
+            <a href="https://t.me/V_best27" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="fa-telegram"><path fill="white" d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/></svg>    
+            </a>
+            <a href="https://www.instagram.com/v_best27/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fa-instagram"><path fill="white" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+        </div>    
+        
+            <p class="tab">
+                <a href="disclaimer.html">Disclaimer</a> |
+                <a href="faq.html">FAQ'S</a> |
+                <a href="terms.html">Terms and Conditions</a> |
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+            
+            <div class="foot">
+                <p class="copy">Copyrights 2024 ©<a href="#home">VBEST</a></p>  
+                <p class="design"> Designed by<a href="#home">VBEST</a></p>
+            </div>
+    </footer>
+</body>
+</html>
+
